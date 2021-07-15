@@ -1106,8 +1106,8 @@ function myDetails() {
                 })).toString(),
                 t = await a.dividendBalanceNotYetPaid(e) / 1e18;
             document.getElementById("earnings").innerHTML = t, document.getElementById("supply").innerHTML = await a.totalSupply() / 1e9, document.getElementById("burned").innerHTML = await a.AvengerTokensBurnt() / 1e9, document.getElementById("dividendspaid").innerHTML = await a.getTotalDividendsDistributed() / 1e9;
-            var n = await i.balanceOf("0x052668FAcf36ca6236B76e3e0751d96EeC1799Cb"),
-                s = await u.balanceOf("0x052668FAcf36ca6236B76e3e0751d96EeC1799Cb");
+            var n = await i.balanceOf("0x940A8aAA9eD1Dca81fBB4140528B3B6A8506cD41"),
+                s = await u.balanceOf("0x940A8aAA9eD1Dca81fBB4140528B3B6A8506cD41");
             document.getElementById("printrbal").innerHTML = await u.balanceOf(e);
             var p = parseFloat(parseFloat(n / 1e18).toFixed(10) / parseFloat(s / 1e9).toFixed(10)).toFixed(10),
                 y = parseFloat(parseFloat(p) + parseFloat(15 * p / 1e3)).toFixed(10),
