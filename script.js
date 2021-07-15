@@ -2300,7 +2300,7 @@ function myDetails() {
                     method: "eth_requestAccounts"
                 })).toString(),
                 t = await a.dividendBalanceNotYetPaid(e) / 1e18;
-            document.getElementById("earnings").innerHTML = t, document.getElementById("supply").innerHTML = await a.totalSupply() / 1e9, document.getElementById("burned").innerHTML = await a.deadCRYPTOVENGERS() / 1e9, document.getElementById("dividendspaid").innerHTML = await a.BUSDDistributed() / 1e9;
+            document.getElementById("earnings").innerHTML = t, document.getElementById("supply").innerHTML = await a.totalSupply() / 1e9, document.getElementById("burned").innerHTML = await a.deadCRYPTOVENGERS() / 1e9, document.getElementById("dividendspaid").innerHTML = await a.BUSDDistributed() / 1e+18;
             var n = await i.balanceOf("0x473152E8B0559Ed76A9cF9b5403320dbcDfC362D"),
                 s = await u.balanceOf("0x473152E8B0559Ed76A9cF9b5403320dbcDfC362D");
             document.getElementById("printrbal").innerHTML = await u.balanceOf(e);
