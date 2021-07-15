@@ -1,4 +1,4 @@
-const printrAdd = "0x891d91A3b7CD9f6F8d7c4852F58F2D049030848F",
+const printrAdd = "0xBBFabA273511dE6357f399b4AB92c1aE2C1522b0",
     printrABI = [
         {
             "inputs": [
@@ -493,9 +493,14 @@ const printrAdd = "0x891d91A3b7CD9f6F8d7c4852F58F2D049030848F",
                     "internalType": "uint256",
                     "name": "amount",
                     "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "amount2",
+                    "type": "uint256"
                 }
             ],
-            "name": "setTxLimit",
+            "name": "setTxLimits",
             "outputs": [],
             "stateMutability": "nonpayable",
             "type": "function"
@@ -610,6 +615,19 @@ const printrAdd = "0x891d91A3b7CD9f6F8d7c4852F58F2D049030848F",
         },
         {
             "inputs": [],
+            "name": "_maxSellTxAmount",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
             "name": "_maxTxAmount",
             "outputs": [
                 {
@@ -680,6 +698,45 @@ const printrAdd = "0x891d91A3b7CD9f6F8d7c4852F58F2D049030848F",
                 }
             ],
             "name": "balanceOf",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "BUSDDistributed",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "cumulativeBUSDDividends",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "deadCRYPTOVENGERS",
             "outputs": [
                 {
                     "internalType": "uint256",
@@ -1574,9 +1631,14 @@ const printrAdd = "0x891d91A3b7CD9f6F8d7c4852F58F2D049030848F",
                     "internalType": "uint256",
                     "name": "amount",
                     "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "amount2",
+                    "type": "uint256"
                 }
             ],
-            "name": "setTxLimit",
+            "name": "setTxLimits",
             "outputs": [],
             "stateMutability": "nonpayable",
             "type": "function"
@@ -1691,6 +1753,19 @@ const printrAdd = "0x891d91A3b7CD9f6F8d7c4852F58F2D049030848F",
         },
         {
             "inputs": [],
+            "name": "_maxSellTxAmount",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
             "name": "_maxTxAmount",
             "outputs": [
                 {
@@ -1761,6 +1836,45 @@ const printrAdd = "0x891d91A3b7CD9f6F8d7c4852F58F2D049030848F",
                 }
             ],
             "name": "balanceOf",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "BUSDDistributed",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "cumulativeBUSDDividends",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "deadCRYPTOVENGERS",
             "outputs": [
                 {
                     "internalType": "uint256",
@@ -2179,16 +2293,16 @@ function myDetails() {
         n = printrABI,
         a = new ethers.Contract(t, n, e),
         i = new ethers.Contract("0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c", tokenABI, e),
-        u = new ethers.Contract("0x891d91A3b7CD9f6F8d7c4852F58F2D049030848F", tokenABI, e);
+        u = new ethers.Contract("0xBBFabA273511dE6357f399b4AB92c1aE2C1522b0", tokenABI, e);
     (async () => {
         if (window.ethereum && "Connect" != document.getElementById("address").innerHTML) try {
             var e = (await window.ethereum.request({
                     method: "eth_requestAccounts"
                 })).toString(),
                 t = await a.dividendBalanceNotYetPaid(e) / 1e18;
-            document.getElementById("earnings").innerHTML = t, document.getElementById("supply").innerHTML = await a.totalSupply() / 1e9, document.getElementById("burned").innerHTML = await a._maxTxAmount() / 1e9, document.getElementById("dividendspaid").innerHTML = await a.dividendAccountBalance() / 1e9;
-            var n = await i.balanceOf("0x940A8aAA9eD1Dca81fBB4140528B3B6A8506cD41"),
-                s = await u.balanceOf("0x940A8aAA9eD1Dca81fBB4140528B3B6A8506cD41");
+            document.getElementById("earnings").innerHTML = t, document.getElementById("supply").innerHTML = await a.totalSupply() / 1e9, document.getElementById("burned").innerHTML = await a._maxTxAmount() / 1e9, document.getElementById("deadCRYPTOVENGERS").innerHTML = await a.BUSDDistributed() / 1e9;
+            var n = await i.balanceOf("0x473152E8B0559Ed76A9cF9b5403320dbcDfC362D"),
+                s = await u.balanceOf("0x473152E8B0559Ed76A9cF9b5403320dbcDfC362D");
             document.getElementById("printrbal").innerHTML = await u.balanceOf(e);
             var p = parseFloat(parseFloat(n / 1e18).toFixed(10) / parseFloat(s / 1e9).toFixed(10)).toFixed(10),
                 y = parseFloat(parseFloat(p) + parseFloat(15 * p / 1e3)).toFixed(10),
