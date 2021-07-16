@@ -5,9 +5,9 @@
 }
 
 :root {
-  --app-container: #B80F0A;
+  --app-container: #fd0d1b;
   --main-color: #000000;
-  --secondary-color: #4A4A4A;
+  --secondary-color: #000000;
   --link-color: #1f1c2e;
   --link-color-hover: #c3cff4;
   --link-color-active: #fff;
@@ -253,7 +253,7 @@ button, a {
 
 .projects-section {
   flex: 2;
-  background-color: #111110;
+  background-color: #fd0d1b;
   border-radius: 32px;
   padding: 32px 32px 0 32px;
   overflow: hidden;
@@ -535,7 +535,7 @@ button, a {
   color: var(--main-color);
 }
 .project-box-header span {
-  color: #4A4A4A;
+  color: #000000;
   opacity: 0.7;
   font-size: 18px;
   font-weight: bold;
