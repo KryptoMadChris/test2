@@ -40,7 +40,7 @@ function myDetails() {
             }), document.getElementById("printrprice").innerHTML = o, document.getElementById("pool").innerHTML = parseFloat(o) * parseFloat(s / 1e9)
         } catch (e) {
             console.log(e)
-        } else document.getElementById("earnings").innerHTML = "Connect to Wallet", document.getElementById("earnings1").innerHTML = "Connect to Wallet"
+        } else document.getElementById("earnings").innerHTML = "Connect to Wallet", document.getElementById("earnings").innerHTML = "Connect to Wallet"
     })()
 }
 
